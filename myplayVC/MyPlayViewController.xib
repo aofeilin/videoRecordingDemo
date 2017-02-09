@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPlayViewController">
+            <connections>
+                <outlet property="mPlayButton" destination="Rob-ZA-fON" id="PaB-HH-Wq8"/>
+                <outlet property="mScrubber" destination="s6W-kT-4lg" id="tqR-1M-P60"/>
+                <outlet property="mStopButton" destination="x7G-B2-oSw" id="dI0-yY-ARH"/>
+                <outlet property="mToolbar" destination="fwL-Xx-DhD" id="sNc-kN-e6y"/>
+                <outlet property="playViewContent" destination="gpA-sI-DYR" id="Vvo-e8-3Ma"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="gpA-sI-DYR" userLabel="playViewContent" customClass="MyPlayViewContent">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" barStyle="blackTranslucent" id="fwL-Xx-DhD">
+                            <rect key="frame" x="0.0" y="620" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items/>
+                        </toolbar>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <point key="canvasLocation" x="292" y="-114"/>
+        </view>
+        <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="s6W-kT-4lg" userLabel="slider">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="31"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <connections>
+                <action selector="beginScrubbing:" destination="-1" eventType="touchDown" id="H4k-Ez-8gZ"/>
+                <action selector="endScrubbing:" destination="-1" eventType="touchUpInside" id="9IN-bu-cd9"/>
+                <action selector="endScrubbing:" destination="-1" eventType="touchUpOutside" id="RLa-qG-3q0"/>
+                <action selector="endScrubbing:" destination="-1" eventType="touchCancel" id="T35-Iu-srU"/>
+                <action selector="scrub:" destination="-1" eventType="valueChanged" id="HeR-hA-lJ8"/>
+                <action selector="scrub:" destination="-1" eventType="touchDragInside" id="yvR-4M-BCw"/>
+            </connections>
+        </slider>
+        <barButtonItem systemItem="play" id="Rob-ZA-fON" userLabel="MPlay Button">
+            <connections>
+                <action selector="play:" destination="-1" id="E1r-gv-99m"/>
+            </connections>
+        </barButtonItem>
+        <barButtonItem systemItem="pause" id="x7G-B2-oSw" userLabel="MStop Button">
+            <connections>
+                <action selector="pause:" destination="-1" id="xat-he-6bu"/>
+            </connections>
+        </barButtonItem>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
